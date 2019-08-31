@@ -2,11 +2,30 @@
 scriptDirectory=$(dirname "$(realpath -s "$BASH_SOURCE[0]")") # Get the directory in which the main shell script resides. With thanks to Darshan Rivka Whittle @ https://stackoverflow.com/questions/4774054/reliable-way-for-a-bash-script-to-get-the-full-path-to-itself
 echo Configuring shell using scripts in $scriptDirectory
 
-# Git related configuration
+# Start by clearing all aliases coming from other places
+unalias -a
+
 source "$scriptDirectory/git/shell-profile-git.sh"
 source "$scriptDirectory/git-with-gradle/shell-profile-git-with-gradle.sh"
 
+
+# ls configuration
+lsOptions='-lhF --color=auto --show-control-chars'      # Some basic defaults for ls. Doing this here so that it overrides any added by system level scripts
+                                                        #   -l: long format
+                                                        #   -h: human readable file sizes
+                                                        #   -F: applies classifier symbols
+                                                        #   --color=auto: applies color to output when run from a terminal
+                                                        #   --show-control-chars: shows non-graphic characters as-is
+
+alias ls="ls $lsOptions -gG"                            # My preferred long mode ls
+                                                        #   -G: do not show group information
+                                                        #   -g: long format without owner information
+
+alias lw='ls -C'                                        # "wide mode" ls
+alias ll="\ls $lsOptions"                               # As the 'preferred long mode ls' above but with owner and group information showing
+alias dir='ls'                                          # For those days when I'm reverting to the DOS part of my past. :)
+
+
 # Misc
-alias h='history'
-alias c='clear'
-alias dir='ls'
+alias h='history'                                       # Display bash command history
+alias c='clear'                                         # Clear the console
