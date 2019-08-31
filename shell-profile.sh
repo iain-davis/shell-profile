@@ -8,7 +8,6 @@ unalias -a
 source "$scriptDirectory/git/shell-profile-git.sh"
 source "$scriptDirectory/git-with-gradle/shell-profile-git-with-gradle.sh"
 
-
 # ls configuration
 lsOptions='-lhF --color=auto --show-control-chars'      # Some basic defaults for ls. Doing this here so that it overrides any added by system level scripts
                                                         #   -l: long format
