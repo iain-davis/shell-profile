@@ -4,7 +4,7 @@ scriptDirectory="$(dirname "${BASH_SOURCE[0]}")"
 
 # Git related configuration
 source "$scriptDirectory/git/shell-profile-git.sh"
-
+source "$scriptDirectory/git-with-gradle/shell-profile-git-with-gradle.sh"
 
 # Misc
 alias h='history'
@@ -25,5 +25,4 @@ complete -F _git_branch_complete buildAlpha
 complete -F _git_branch_complete buildMaster.sh
 complete -F _git_branch_complete buildMaster
 complete -F _git_branch_complete removeBranch.sh
-complete -F _git_branch_complete removeBranch
 complete -F _git_branch_complete rb
