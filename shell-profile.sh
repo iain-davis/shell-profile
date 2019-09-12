@@ -8,7 +8,8 @@ export GIT_EDITOR=nano
 # Start by clearing all aliases coming from other places
 unalias -a
 
-source "$scriptDirectory/git/shell-profile-git.sh"
+source "$scriptDirectory/git-profile/shell-profile-git.sh"
+source "$scriptDirectory/gradle-profile/shell-profile-gradle.sh"
 source "$scriptDirectory/git-with-gradle/shell-profile-git-with-gradle.sh"
 
 # ls configuration
