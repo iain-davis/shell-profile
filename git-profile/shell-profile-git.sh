@@ -17,7 +17,6 @@ alias swap='git checkout -'
 alias gc='git checkout'
 alias push='git push origin'
 alias pull='git pull origin'
-alias gcc='./gradlew clean check'
 
 complete -F _git_branch_complete gc
 complete -F _git_branch_complete push

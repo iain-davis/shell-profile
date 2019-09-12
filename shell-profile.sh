@@ -28,7 +28,6 @@ alias lw='ls -C'                                        # "wide mode" ls
 alias ll="\ls $lsOptions"                               # As the 'preferred long mode ls' above but with owner and group information showing
 alias dir='ls'                                          # For those days when I'm reverting to the DOS part of my past. :)
 
-
 # Misc
 alias h='history'                                       # Display bash command history
 alias c='clear'                                         # Clear the console
