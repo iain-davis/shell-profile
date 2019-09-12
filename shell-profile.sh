@@ -2,9 +2,6 @@
 scriptDirectory=$(dirname "$(realpath -s "$BASH_SOURCE[0]")") # Get the directory in which the main shell script resides. With thanks to Darshan Rivka Whittle @ https://stackoverflow.com/questions/4774054/reliable-way-for-a-bash-script-to-get-the-full-path-to-itself
 echo Configuring shell using scripts in $scriptDirectory
 
-# Configure nano to be the git editor
-export GIT_EDITOR=nano
-
 # Start by clearing all aliases coming from other places
 unalias -a
 

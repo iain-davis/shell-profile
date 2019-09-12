@@ -7,6 +7,9 @@ _git_branch_complete() {
     COMPREPLY=($(compgen -W "$branches" -- "$2"))                                        # Add the branch names to tab completion's dictionary
 }
 
+# Configure nano to be the git editor
+export GIT_EDITOR=nano
+
 # Aliases without arguments
 alias gs='git status'
 alias gb='git branch'
