@@ -22,6 +22,7 @@ alias push='git push origin'
 alias pull='git pull origin'
 alias gadd='git add . && git status'
 alias commit='git commit -m'
+alias fetch='git fetch'
 
 complete -F _git_branch_complete gc
 complete -F _git_branch_complete push
