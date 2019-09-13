@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ -z "$1" ]
+then
+    echo "Specify branch to create"
+    exit;
+fi
 set -x;                            # Echo commands to the screen
 git checkout master             && # Checkout master branch
 git pull origin master          && # Pull latest commits for the master branch

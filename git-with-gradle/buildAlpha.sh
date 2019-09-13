@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ -z "$1" ]
+then
+    echo "Specify branch to build for alpha"
+    exit;
+fi
 set -x;                       # Echo commands to the screen
 git checkout $1            && # Checkout the feature branch
 git pull origin $1         && # Pull latest commits for the feature branch

@@ -1,5 +1,9 @@
 #!/bin/bash
-set -x;                    # Echo commands to the screen
+if [ -z "$1" ]
+then
+    echo "Specify branch to build for master"
+    exit;
+fiset -x;                    # Echo commands to the screen
 git checkout $1         && # Checkout the feature branch
 git pull origin $1      && # Pull latest commits for the feature branch
 ./gradlew clean check   && # Confirm branch's tests are passing
