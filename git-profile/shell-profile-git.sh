@@ -21,6 +21,8 @@ alias gc='git checkout'
 alias push='git push origin'
 alias pull='git pull origin'
 alias gadd='git add . && git status'
+
+# Has an argument, but not a branch
 alias commit='git commit -m'
 
 complete -F _git_branch_complete gc
