@@ -24,6 +24,7 @@ alias gadd='git add . && git status'
 
 # Has an argument, but not a branch
 alias commit='git commit -m'
+alias fetch='git fetch'
 
 complete -F _git_branch_complete gc
 complete -F _git_branch_complete push
