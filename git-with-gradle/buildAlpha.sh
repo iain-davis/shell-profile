@@ -5,11 +5,13 @@ then
     echo "Specify branch to build for alpha"
     exit;
 fi
-# With thanks to https://stackoverflow.com/a/5143914/24700
-if ! git diff-index --quiet HEAD --; then
+
+# With thanks to: https://stackoverflow.com/a/25149786/24700
+if [[ `git status --porcelain` ]]; then
   echo "There are uncommitted changes. Commit or toss before continuing."
   exit;
 fi
+
 set -x;                       # Echo commands to the screen
 git checkout $1            && # Checkout the feature branch
 git pull origin $1         && # Pull latest commits for the feature branch
