@@ -1,8 +1,14 @@
 #!/bin/bash
+echo "Beginning build for the alphaTest branch"
 if [ -z "$1" ]
 then
     echo "Specify branch to build for alpha"
     exit;
+fi
+# With thanks to https://stackoverflow.com/a/5143914/24700
+if ! git diff-index --quiet HEAD --; then
+  echo "There are uncommitted changes. Commit or toss before continuing."
+  exit;
 fi
 set -x;                       # Echo commands to the screen
 git checkout $1            && # Checkout the feature branch
