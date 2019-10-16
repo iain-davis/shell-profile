@@ -16,6 +16,10 @@ alias gb='git branch'
 alias toss='git add . && git reset --hard'
 alias swap='git checkout -'
 
+# Aliases that have optional arguments
+alias push='_id_git_push'
+alias pull='_id_git_pull'
+
 # Aliases that take branches as arguments
 alias gc='git checkout'
 alias gadd='git add . && git status'
@@ -24,23 +28,23 @@ alias gadd='git add . && git status'
 alias commit='git commit -m'
 alias fetch='git fetch'
 
-function _getCurrentBranch() {
+function _id_get_current_branch() {
   git branch --no-color | grep -E '^\*' | awk '{print $2}' || echo "default_value"
 }
 
 # TODO: Refactor these two functions to eliminate duplicated code
-function push() {
+function _id_git_push() {
   if [ -z "$1" ]; then
-    local branch=$(_getCurrentBranch)
+    local branch=$(_id_get_current_branch)
   else
     local branch=$1
   fi
   git push origin $branch
 }
 
-function pull() {
+function _id_git_pull() {
   if [ -z "$1" ]; then
-    local branch=$(_getCurrentBranch)
+    local branch=$(_id_get_current_branch)
   else
     local branch=$1
   fi
