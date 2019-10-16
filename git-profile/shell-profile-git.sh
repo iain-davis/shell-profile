@@ -7,17 +7,26 @@ _git_branch_complete() {
     COMPREPLY=($(compgen -W "$branches" -- "$2"))                                        # Add the branch names to tab completion's dictionary
 }
 
-function getCurrentBranch() {
+function _getCurrentBranch() {
       git branch --no-color | grep -E '^\*' | awk '{print $2}' || echo "default_value"
 }
 
 function push() {
   if [ -z "$1" ]; then
-    local branch=$(getCurrentBranch)
+    local branch=$(_getCurrentBranch)
   else
     local branch=$1
   fi
   git push origin $branch
+}
+
+function pull() {
+  if [ -z "$1" ]; then
+    local branch=$(_getCurrentBranch)
+  else
+    local branch=$1
+  fi
+  git pull origin $branch
 }
 
 # Configure nano to be the git editor
@@ -31,7 +40,6 @@ alias swap='git checkout -'
 
 # Aliases that take branches as arguments
 alias gc='git checkout'
-alias pull='git pull origin'
 alias gadd='git add . && git status'
 
 # Has an argument, but not a branch
