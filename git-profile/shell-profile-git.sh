@@ -7,8 +7,25 @@ _git_branch_complete() {
     COMPREPLY=($(compgen -W "$branches" -- "$2"))                                        # Add the branch names to tab completion's dictionary
 }
 
+# Configure nano to be the git editor
+export GIT_EDITOR=nano
+
+# Aliases without arguments
+alias gs='git status'
+alias gb='git branch'
+alias toss='git add . && git reset --hard'
+alias swap='git checkout -'
+
+# Aliases that take branches as arguments
+alias gc='git checkout'
+alias gadd='git add . && git status'
+
+# Has an argument, but not a branch
+alias commit='git commit -m'
+alias fetch='git fetch'
+
 function _getCurrentBranch() {
-      git branch --no-color | grep -E '^\*' | awk '{print $2}' || echo "default_value"
+  git branch --no-color | grep -E '^\*' | awk '{print $2}' || echo "default_value"
 }
 
 # TODO: Refactor these two functions to eliminate duplicated code
@@ -29,23 +46,6 @@ function pull() {
   fi
   git pull origin $branch
 }
-
-# Configure nano to be the git editor
-export GIT_EDITOR=nano
-
-# Aliases without arguments
-alias gs='git status'
-alias gb='git branch'
-alias toss='git add . && git reset --hard'
-alias swap='git checkout -'
-
-# Aliases that take branches as arguments
-alias gc='git checkout'
-alias gadd='git add . && git status'
-
-# Has an argument, but not a branch
-alias commit='git commit -m'
-alias fetch='git fetch'
 
 complete -F _git_branch_complete gc
 complete -F _git_branch_complete push
