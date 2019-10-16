@@ -7,6 +7,19 @@ _git_branch_complete() {
     COMPREPLY=($(compgen -W "$branches" -- "$2"))                                        # Add the branch names to tab completion's dictionary
 }
 
+function getCurrentBranch() {
+      git branch --no-color | grep -E '^\*' | awk '{print $2}' || echo "default_value"
+}
+
+function gpush() {
+  if [ -z "$1" ]; then
+    local branch=$(getCurrentBranch)
+  else
+    local branch=$1
+  fi
+  echo $branch
+}
+
 # Configure nano to be the git editor
 export GIT_EDITOR=nano
 
