@@ -11,6 +11,7 @@ function _getCurrentBranch() {
       git branch --no-color | grep -E '^\*' | awk '{print $2}' || echo "default_value"
 }
 
+# TODO: Refactor these two functions to eliminate duplicated code
 function push() {
   if [ -z "$1" ]; then
     local branch=$(_getCurrentBranch)
