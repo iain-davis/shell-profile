@@ -11,13 +11,13 @@ function getCurrentBranch() {
       git branch --no-color | grep -E '^\*' | awk '{print $2}' || echo "default_value"
 }
 
-function gpush() {
+function push() {
   if [ -z "$1" ]; then
     local branch=$(getCurrentBranch)
   else
     local branch=$1
   fi
-  echo $branch
+  git push origin $branch
 }
 
 # Configure nano to be the git editor
@@ -31,7 +31,6 @@ alias swap='git checkout -'
 
 # Aliases that take branches as arguments
 alias gc='git checkout'
-alias push='git push origin'
 alias pull='git pull origin'
 alias gadd='git add . && git status'
 
