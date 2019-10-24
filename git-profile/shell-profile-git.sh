@@ -19,6 +19,7 @@ alias swap='git checkout -'
 # Aliases that have optional arguments
 alias push='_id_git_push'
 alias pull='_id_git_pull'
+alias shortstat='git diff --shortstat master'
 
 # Aliases that take branches as arguments
 alias gc='git checkout'
