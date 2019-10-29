@@ -9,6 +9,8 @@ source "$scriptDirectory/git-profile/shell-profile-git.sh"
 source "$scriptDirectory/gradle-profile/shell-profile-gradle.sh"
 source "$scriptDirectory/git-with-gradle/shell-profile-git-with-gradle.sh"
 
+source "$scriptDirectory/node-profile/node-profile.sh"
+
 # ls configuration
 lsOptions='-lhF --color=auto --show-control-chars'      # Some basic defaults for ls. Doing this here so that it overrides any added by system level scripts
                                                         #   -l: long format
