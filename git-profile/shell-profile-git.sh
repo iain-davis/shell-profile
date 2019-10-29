@@ -13,6 +13,7 @@ export GIT_EDITOR=nano
 # Aliases without arguments
 alias gs='git status'
 alias gb='git branch'
+alias gba='git branch -a'
 alias toss='git add . && git reset --hard'
 alias swap='git checkout -'
 
