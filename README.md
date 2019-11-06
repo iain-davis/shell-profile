@@ -8,3 +8,6 @@ NOTE: The scripts rely on `realpath` and the `_git_branch_complete` function in 
 2. Add `source /path/to/shell-profile/shell-profile.sh` to your `.bash_profile`
 3. (Optionally) add `GIT_EDITOR=MyFavoriteCUITextEditor` to your `.bash_profile` sometime after the line above to override my setting for the text editor in bash shells
 
+# Resources
+## Articles around some of the basic nuances
+* Difference between .bashrc and .bash_profile: http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html
