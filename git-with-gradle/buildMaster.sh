@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "Beginning release..."
+
 if [ -z "$1" ]
 then
     echo "Specify branch to build for master"

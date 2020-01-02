@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Beginning build for the alphaTest branch"
+
 if [ -z "$1" ]
 then
     echo "Specify branch to build for alpha"
