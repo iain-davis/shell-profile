@@ -5,6 +5,7 @@ echo Configuring shell using scripts in $scriptDirectory
 # Start by clearing all aliases coming from other places
 unalias -a
 
+unameString=`uname`
 source "$scriptDirectory/git-profile/shell-profile-git.sh"
 source "$scriptDirectory/gradle-profile/shell-profile-gradle.sh"
 source "$scriptDirectory/git-with-gradle/shell-profile-git-with-gradle.sh"
@@ -12,12 +13,16 @@ source "$scriptDirectory/git-with-gradle/shell-profile-git-with-gradle.sh"
 source "$scriptDirectory/node-profile/node-profile.sh"
 
 # ls configuration
-lsOptions='-lhF --color=auto --show-control-chars'      # Some basic defaults for ls. Doing this here so that it overrides any added by system level scripts
-                                                        #   -l: long format
-                                                        #   -h: human readable file sizes
-                                                        #   -F: applies classifier symbols
-                                                        #   --color=auto: applies color to output when run from a terminal
-                                                        #   --show-control-chars: shows non-graphic characters as-is
+if [[ "Darwin" == "$unameString" ]]
+then
+  lsOptions='-lhFGB'
+else
+  lsOptions='-lhF --color=auto --show-control-chars'      # Some basic defaults for ls. Doing this here so that it overrides any added by system level scripts
+fi                                                        #   -l: long format
+                                                          #   -h: human readable file sizes
+                                                          #   -F: applies classifier symbols
+                                                          #   --color=auto: applies color to output when run from a terminal
+                                                          #   --show-control-chars: shows non-graphic characters as-is
 
 alias ls="ls $lsOptions -gG"                            # My preferred long mode ls
                                                         #   -G: do not show group information
