@@ -29,7 +29,7 @@ alias gadd='git add . && git status'
 # Has an argument, but not a branch
 alias commit='git commit -m'
 alias fetch='git fetch'
-alias fullCommit='_id_full_commit'
+alias fullcommit='_id_full_commit'
 
 function _id_get_current_branch() {
   git branch --no-color | grep -E '^\*' | awk '{print $2}' || echo "default_value"
@@ -43,7 +43,7 @@ function _id_full_commit() {
 
   local branch=$(_id_get_current_branch)
 
-  git add . && commit "$1" && git push origin $branch
+  git add . && git commit -m "$1" && git push origin $branch
 }
 
 # TODO: Refactor these two functions to eliminate duplicated code
