@@ -29,9 +29,21 @@ alias gadd='git add . && git status'
 # Has an argument, but not a branch
 alias commit='git commit -m'
 alias fetch='git fetch'
+alias fullcommit='_id_full_commit'
 
 function _id_get_current_branch() {
   git branch --no-color | grep -E '^\*' | awk '{print $2}' || echo "default_value"
+}
+
+function _id_full_commit() {
+  if [ -z "$1" ]; then
+    echo "A commit message is required for this command"
+    exit;
+  fi
+
+  local branch=$(_id_get_current_branch)
+
+  git add . && git commit -m "$1" && git push origin --set-upstream $branch $branch
 }
 
 # TODO: Refactor these two functions to eliminate duplicated code
@@ -41,7 +53,7 @@ function _id_git_push() {
   else
     local branch=$1
   fi
-  git push origin $branch
+  git push origin --set-upstream $branch $branch
 }
 
 function _id_git_pull() {
@@ -51,6 +63,14 @@ function _id_git_pull() {
     local branch=$1
   fi
   git pull origin $branch
+}
+
+function _id_git_determine_branch() {
+  if [ -z "$1"]; then
+    return $(_id_get_current_branch)
+  else
+    return $1
+  fi
 }
 
 complete -F _git_branch_complete gc
