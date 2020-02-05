@@ -43,7 +43,7 @@ function _id_full_commit() {
 
   local branch=$(_id_get_current_branch)
 
-  git add . && git commit -m "$1" && git push origin --set-upstream $branch $branch
+  git add . && git commit -m "$1" && git push origin $branch
 }
 
 # TODO: Refactor these two functions to eliminate duplicated code
@@ -53,7 +53,7 @@ function _id_git_push() {
   else
     local branch=$1
   fi
-  git push origin --set-upstream $branch $branch
+  git push origin --set-upstream $branch
 }
 
 function _id_git_pull() {
