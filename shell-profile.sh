@@ -40,3 +40,4 @@ alias dir='ls'                                            # For those days when 
 # Misc
 alias h='history'                                         # Display bash command history
 alias c='clear'                                           # Clear the console
+alias killtask='taskkill -f -im'                          # Kill a process on windows. Example: killtask java.exe
