@@ -3,8 +3,10 @@ Series of shell scripts to set up my bash environment the way I like it.
 
 NOTE: The scripts rely on `realpath` and the `_git_branch_complete` function in `shell-profile-git.sh` relies on `sed`, `sort`, and `uniq`. On Windows machines, all of those are installed by Git when Git Bash is installed. Depending on your installation choices they may _only_ be available in Git Bash or in a shell wrapped around Git Bash (i.e., ConEmu executing Git Bash as the inner shell).
 
-Note For MacOS users:
+Notes For MacOS users:
 * realpath is included in the coreutils package which can be installed by `brew install coreutils`
+* If you prefer GNU ls, make sure brew's corebin is in the PATH early (for example: `export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"`) and set the environment variable IDLSTYPE=GNU
+* 
 
 # Installation
 1. Clone the repository
