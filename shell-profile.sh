@@ -13,7 +13,7 @@ source "$scriptDirectory/git-with-gradle/shell-profile-git-with-gradle.sh"
 source "$scriptDirectory/node-profile/node-profile.sh"
 
 # ls configuration
-if [[ "Darwin" == "$unameString" ]]
+if [ "Darwin" == "$unameString" ] && [ "GNU" != "$IDLSTYPE" ]
 then
   lsOptions='-lhFGB'                                      # The basic defaults for ls in a form that is functional on BSD and MacOS
                                                           #   -l: long format
