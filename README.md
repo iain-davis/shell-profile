@@ -6,7 +6,7 @@ NOTE: The scripts rely on `realpath` and the `_git_branch_complete` function in 
 Notes For MacOS users:
 * realpath is included in the coreutils package which can be installed by `brew install coreutils`
 * If you prefer GNU ls, make sure brew's corebin is in the PATH early (for example: `export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"`) and set the environment variable IDLSTYPE=GNU
-* 
+
 
 # Installation
 1. Clone the repository
