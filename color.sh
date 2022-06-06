@@ -1,4 +1,5 @@
 ## With thanks to: https://stackoverflow.com/a/28938235
+# shellcheck disable=SC2034
 # Reset
 Reset='\033[0m'       # Text Reset
 
@@ -17,7 +18,7 @@ Grey='\033[1;30m'         # Bright Black = Grey
 BRed='\033[1;31m'         # Red
 BGreen='\033[1;32m'       # Green
 BYellow='\033[1;33m'      # Yellow
-BrightBlue='\033[1;34m'    # Bright Blue
+BrightBlue='\033[1;34m'   # Bright Blue
 BPurple='\033[1;35m'      # Purple
 BCyan='\033[1;36m'        # Cyan
 BWhite='\033[1;37m'       # White
