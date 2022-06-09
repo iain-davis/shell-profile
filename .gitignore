@@ -1,1 +1,5 @@
-.idea
+### IntelliJ
+## Exclude everything in the .idea folder
+.idea/*
+## Include the project-level dictionaries
+!idea/dictionaries
