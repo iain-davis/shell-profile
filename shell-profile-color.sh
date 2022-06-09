@@ -1,7 +1,8 @@
+#!/bin/bash
 ## With thanks to: https://stackoverflow.com/a/28938235
 # shellcheck disable=SC2034
 # Reset
-Reset='\033[0m'       # Text Reset
+Reset='\033[0m'           # Reset everything back to normal
 
 # Regular Colors
 Black='\033[0;30m'        # Black
@@ -13,7 +14,7 @@ Purple='\033[0;35m'       # Purple
 Cyan='\033[0;36m'         # Cyan
 White='\033[0;37m'        # White
 
-# Bold
+# Bold/Bright
 Grey='\033[1;30m'         # Bright Black = Grey
 BRed='\033[1;31m'         # Red
 BGreen='\033[1;32m'       # Green

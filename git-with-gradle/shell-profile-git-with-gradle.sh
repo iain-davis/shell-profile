@@ -1,5 +1,5 @@
 #!/bin/bash
-echo Setting up git-gradle combination commands...
+echo -e Configuring shell with support for ${Green}git with gradle${Reset}...
 # This script assumes that scriptDirectory has already been set and depends on shell-profile-git.sh
 
 # Aliased scripts that take a branch as an argument that need tab completion

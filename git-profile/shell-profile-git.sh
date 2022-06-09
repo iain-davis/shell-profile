@@ -1,4 +1,5 @@
-echo Setting up git related shell commands...
+#!/bin/bash
+echo -e Configuring shell with support for ${Green}git${Reset}...
 # Completion handler that returns choices by populating Bash array COMPREPLY
 # (filtered by the currently entered word ($2) via compgen builtin)
 # With thanks to: https://stackoverflow.com/questions/46696156/git-autocomplete-for-custom-bash-functions

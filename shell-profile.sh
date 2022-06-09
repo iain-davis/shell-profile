@@ -1,7 +1,9 @@
 #!/bin/bash
 # Get the directory in which the main shell script resides. With thanks to Darshan Rivka Whittle @ https://stackoverflow.com/questions/4774054/reliable-way-for-a-bash-script-to-get-the-full-path-to-itself
+# For this to work on macOS, 'realpath' needs to be installed: brew install coreutils
 scriptDirectory=$(dirname "$(realpath -s "${BASH_SOURCE[0]}")")
-echo Configuring shell using scripts in "$scriptDirectory"
+source "$scriptDirectory/shell-profile-color.sh"
+echo -e Configuring shell using scripts in ${Green}"$scriptDirectory"${Reset}...
 
 # Start by clearing all aliases coming from other places
 unalias -a
