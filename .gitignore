@@ -1,4 +1,8 @@
 ### IntelliJ
+*.iml
+*.ipr
+*.iws
+
 ## Exclude everything in the .idea folder
 .idea/*
 
