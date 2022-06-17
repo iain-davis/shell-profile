@@ -1,0 +1,10 @@
+### IntelliJ
+*.iml
+*.ipr
+*.iws
+
+## Exclude everything in the .idea folder
+.idea/*
+
+## Include the project-level dictionaries
+!.idea/dictionaries/
