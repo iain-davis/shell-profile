@@ -18,3 +18,5 @@ source "$scriptDirectory/shell-profile-ls.sh"
 alias h='history'                                         # Display bash command history
 alias c='clear'                                           # Clear the console
 alias killtask='taskkill -f -im'                          # Kill a process on windows. Example: killtask java.exe
+
+export PATH="/c/Program Files/Terraform:$PATH"
