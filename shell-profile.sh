@@ -3,6 +3,7 @@
 # For this to work on macOS, 'realpath' needs to be installed: brew install coreutils
 scriptDirectory=$(dirname "$(realpath -s "${BASH_SOURCE[0]}")")
 source "$scriptDirectory/shell-profile-color.sh"
+source "$scriptDirectory/shell-profile-color-prompt.sh"
 echo -e Configuring shell using scripts in ${Green}"$scriptDirectory"${Reset}...
 
 # Start by clearing all aliases coming from other places
