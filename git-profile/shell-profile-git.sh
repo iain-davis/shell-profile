@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 echo -e Configuring shell with support for ${Green}git${Reset}...
 # Completion handler that returns choices by populating Bash array COMPREPLY
 # (filtered by the currently entered word ($2) via compgen builtin)

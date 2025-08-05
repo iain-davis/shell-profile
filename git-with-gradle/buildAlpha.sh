@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 echo "Beginning build for the alphaTest branch"
 
 if [ -z "$1" ]

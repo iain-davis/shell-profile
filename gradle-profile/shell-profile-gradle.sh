@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 echo -e Configuring shell with support for ${Green}gradle${Reset}...
 export GRADLE_OPTS=-Dorg.gradle.daemon=false
 alias gw='./gradlew'

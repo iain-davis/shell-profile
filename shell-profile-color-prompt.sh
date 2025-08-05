@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # PS1 Prompt Versions of the ANSI Color Strings
 # With thanks to: https://stackoverflow.com/a/28938235
 # shellcheck disable=SC2034

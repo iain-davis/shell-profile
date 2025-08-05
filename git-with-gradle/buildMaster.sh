@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 echo "Beginning release..."
 
 if [ -z "$1" ]

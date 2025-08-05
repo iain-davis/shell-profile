@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 echo -e Configuring shell with support for ${Green}git with gradle${Reset}...
 # This script assumes that scriptDirectory has already been set and depends on shell-profile-git.sh
 

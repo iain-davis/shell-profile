@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Determine which variant of 'ls' is in the path
 if [[ "$(ls --version)" == *"GNU"* ]]                    # GNU's ls supports --version, but BSD's does not
 then                                                     # Neither does the ls on Solaris, but I'm not trying to use Solaris
